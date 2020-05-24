@@ -1,17 +1,15 @@
-export default class Cat {
-  constructor (name) {
-    this.name = name
+export default class Account {
+  constructor () {
+    this.balance = 0
   }
 }
 
-Cat.prototype.meow = () => {
-  return 'meow'
-}
-
-// module.exports = Cat
-
-// const hello = (message) => {
-//   return 'Hello World!' + message
+// export default class Cat {
+//   constructor (name) {
+//     this.name = name
+//   }
 // }
 
-// exports.hello = hello
+// Cat.prototype.meow = () => {
+//   return 'meow'
+// }

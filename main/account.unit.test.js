@@ -1,23 +1,29 @@
-// const { hello } = require('./account')
+import Account from './account'
 
-// describe('hello', () => {
+const account = new Account()
+
+describe('Account', () => {
+  it('should be defined', () => {
+    expect(account.balance).toBe(0)
+  })
+})
+
+// import Cat from './account'
+
+// const dave = new Cat()
+
+// describe('Cat', () => {
 //   it('should be defined', () => {
-//     expect(hello).toBeDefined()
+//     expect(dave).toBeDefined()
 //   })
 // })
-import Cat from './account'
-// const { Cat } = require('./account')
-// const { meow } = require('./account')
-const dave = new Cat()
 
-describe('Cat', () => {
-  it('should be defined', () => {
-    expect(dave).toBeDefined()
-  })
-})
+// describe('meow', () => {
+//   it('should be defined', () => {
+//     expect(dave.meow()).toBeDefined()
+//   })
 
-describe('meow', () => {
-  it('should be defined', () => {
-    expect(dave.meow()).toBeDefined()
-  })
-})
+//   it('says meow', ()=> {
+//     expect(dave.meow()).toEqual('meow')
+//   })
+// })
