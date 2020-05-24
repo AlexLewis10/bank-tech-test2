@@ -3,4 +3,8 @@ export default class Deposit {
     this.amount = amount
     this.date = date
   }
+
+  makeDeposit () {
+    return [this.amount, this.date]
+  }
 }

@@ -4,13 +4,3 @@ export default class Account {
     this.transactionHistory = []
   }
 }
-
-// export default class Cat {
-//   constructor (name) {
-//     this.name = name
-//   }
-// }
-
-// Cat.prototype.meow = () => {
-//   return 'meow'
-// }
