@@ -15,4 +15,3 @@ describe('deposit is initialised', () => {
     expect(deposit.date).toBe('10-01-2012')
   })
 })
-
