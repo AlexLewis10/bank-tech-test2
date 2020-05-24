@@ -13,3 +13,9 @@ describe('transaction history', () => {
     expect(account.transactionHistory).toStrictEqual([])
   })
 })
+
+describe('can make a deposit', () => {
+  it('returns an array with the deposit', () => {
+    expect(account.makeDeposit()).toStrictEqual(['Credit', 20, '10-01-2012'])
+  })
+})
