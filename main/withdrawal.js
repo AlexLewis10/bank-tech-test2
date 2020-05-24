@@ -1,5 +1,6 @@
 export default class Withdrawal {
-  constructor (amount) {
+  constructor (amount, date) {
     this.amount = amount
+    this.date = date
   }
 }
