@@ -1,5 +1,6 @@
 export default class Deposit {
-  constructor (amount) {
+  constructor (amount, date) {
     this.amount = amount
+    this.date = date
   }
 }
