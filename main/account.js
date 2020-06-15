@@ -8,10 +8,10 @@ export default class Account {
 
   makeDeposit (date, amount) {
     const deposit = new Deposit(date, amount)
-    return deposit.deposit()
+    this._updateTransactionHistory(deposit.deposit())
   }
 
-  _updateTransactionHistory () {
-    this.transactionHistory.push(['Credit', 20, '10-01-2012'])
+  _updateTransactionHistory (transaction) {
+    this.transactionHistory.push(transaction)
   }
 }
