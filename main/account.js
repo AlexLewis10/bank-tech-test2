@@ -1,4 +1,5 @@
 import Deposit from './deposit.js'
+import Withdrawal from './withdrawal'
 
 export default class Account {
   constructor () {
@@ -17,6 +18,8 @@ export default class Account {
       return 'Cannot withdraw money, insufficient funds'
     }
     this.balance -= amount
+    const withdrawal = new Withdrawal(amount, date, this.balance)
+    this._updateTransactionHistory(withdrawal._makeDebitItem())
   }
 
   _updateTransactionHistory (transaction) {

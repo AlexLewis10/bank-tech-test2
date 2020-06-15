@@ -25,6 +25,15 @@ describe('Can make a deposit', () => {
   })
 })
 
+describe('Can make a withdrawal', () => {
+  it('transaction is added to transaction history', () => {
+    account.makeDeposit(20, '10-01-2012')
+    account.makeWithdrawal(10, '11-10-2012')
+    expect(account.transactionHistory).toStrictEqual([['Credit', 20, '10-01-2012', 20], ['Debit', 10, '11-10-2012', 10]])
+    console.log(account.transactionHistory)
+  })
+})
+
 describe('Balance updates', () => {
   it('when a deposit is made', () => {
     account.makeDeposit(20, '10-01-2012')
