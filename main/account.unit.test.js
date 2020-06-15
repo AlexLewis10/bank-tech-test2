@@ -25,15 +25,21 @@ describe('Can make a deposit', () => {
   })
 })
 
-describe('Balance is updated', () => {
-  it('when a deposit is made the balance is updated', () => {
+describe('Balance updates', () => {
+  it('when a deposit is made', () => {
     account.makeDeposit(20, '10-01-2012')
     expect(account.balance).toStrictEqual(20)
   })
 
-  it('when a withdrawal is made the balance it updated', () => {
+  it('when a withdrawal is made', () => {
     account.makeDeposit(20, '10-01-2012')
     account.makeWithdrawal(10)
     expect(account.balance).toStrictEqual(10)
+  })
+
+  it('does not update if there are insufficient funds', () => {
+    account.makeDeposit(20, '10-01-2012')
+    expect(account.makeWithdrawal(30)).toStrictEqual('Cannot withdraw money, insufficient funds')
+    
   })
 })
