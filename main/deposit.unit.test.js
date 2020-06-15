@@ -3,7 +3,7 @@ import Deposit from './deposit'
 let deposit
 
 beforeEach(() => {
-  deposit = new Deposit(20, '10-01-2012')
+  deposit = new Deposit(20, '10-01-2012', 20)
 })
 
 describe('deposit is initialised', () => {
@@ -17,6 +17,10 @@ describe('deposit is initialised', () => {
 
   it('returns the date of the deposit', () => {
     expect(deposit.date).toBe('10-01-2012')
+  })
+
+  it('returns the current balance', () => {
+    expect(deposit.currentBalance).toBe(20)
   })
 })
 

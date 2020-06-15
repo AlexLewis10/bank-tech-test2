@@ -1,7 +1,8 @@
 export default class Deposit {
-  constructor (amount, date) {
+  constructor (amount, date, currentBalance) {
     this.amount = amount
     this.date = date
+    this.currentBalance = currentBalance
   }
 
   _makeDepositItem () {
