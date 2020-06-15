@@ -8,7 +8,7 @@ export default class Account {
   }
 
   makeDeposit (amount, date) {
-    this._updateBalance(amount)
+    this._updateBalanceAfterDeposit(amount)
     const deposit = new Deposit(amount, date, this.balance)
     this._updateTransactionHistory(deposit._makeDepositItem())
   }
@@ -17,7 +17,7 @@ export default class Account {
     if (amount > this.balance) {
       return 'Cannot withdraw money, insufficient funds'
     }
-    this.balance -= amount
+    this._updateBalanceAfterDebit(amount)
     const withdrawal = new Withdrawal(amount, date, this.balance)
     this._updateTransactionHistory(withdrawal._makeDebitItem())
   }
@@ -26,7 +26,11 @@ export default class Account {
     this.transactionHistory.push(transaction)
   }
 
-  _updateBalance (amount) {
+  _updateBalanceAfterDeposit (amount) {
     this.balance += amount
+  }
+
+  _updateBalanceAfterDebit (amount) {
+    this.balance -= amount
   }
 }

@@ -30,7 +30,6 @@ describe('Can make a withdrawal', () => {
     account.makeDeposit(20, '10-01-2012')
     account.makeWithdrawal(10, '11-10-2012')
     expect(account.transactionHistory).toStrictEqual([['Credit', 20, '10-01-2012', 20], ['Debit', 10, '11-10-2012', 10]])
-    console.log(account.transactionHistory)
   })
 })
 
