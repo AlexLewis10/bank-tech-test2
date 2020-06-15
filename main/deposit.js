@@ -4,7 +4,7 @@ export default class Deposit {
     this.date = date
   }
 
-  deposit () {
+  _makeDepositItem () {
     return ['Credit', this.amount, this.date]
   }
 }

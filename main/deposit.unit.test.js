@@ -18,6 +18,6 @@ describe('deposit is initialised', () => {
 
 describe('makeDeposit returns an array', () => {
   it('returns the amount and the date of the deposit', () => {
-    expect(deposit.deposit()).toStrictEqual(['Credit', 20, '10-01-2012'])
+    expect(deposit._makeDepositItem()).toStrictEqual(['Credit', 20, '10-01-2012'])
   })
 })
