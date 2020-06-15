@@ -1,4 +1,4 @@
-import Deposit from './deposit'
+import Deposit from './deposit.js'
 
 let deposit
 
@@ -24,8 +24,8 @@ describe('Deposit is initialised', () => {
   })
 })
 
-describe('_makeDepositItem returns an array', () => {
-  it('returns the amount and the date of the deposit', () => {
+describe('_makeDepositItem', () => {
+  it('returns the type, amount, date and current balance', () => {
     expect(deposit._makeDepositItem()).toStrictEqual(['Credit', 20, '10-01-2012', 20])
   })
 })

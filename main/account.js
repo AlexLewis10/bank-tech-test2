@@ -1,4 +1,4 @@
-import Deposit from './deposit'
+import Deposit from './deposit.js'
 
 export default class Account {
   constructor () {
@@ -8,7 +8,7 @@ export default class Account {
 
   makeDeposit (amount, date) {
     this._updateBalance(amount)
-    const deposit = new Deposit(amount, date)
+    const deposit = new Deposit(amount, date, this.balance)
     this._updateTransactionHistory(deposit._makeDepositItem())
   }
 
