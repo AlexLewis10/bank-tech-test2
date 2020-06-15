@@ -3,7 +3,7 @@ import Withdrawal from './withdrawal'
 let withdrawal
 
 beforeEach(() => {
-  withdrawal = new Withdrawal(20, '14-01-2012')
+  withdrawal = new Withdrawal(20, '14-01-2012', 10)
 })
 
 describe('withdrawal is initialised', () => {
@@ -20,8 +20,8 @@ describe('withdrawal is initialised', () => {
   })
 })
 
-describe('_makeWithdrawalItem returns an array', () => {
-  it('returns the amount and the date of the deposit', () => {
-    expect(withdrawal._makeDebitItem()).toStrictEqual(['Debit', 20, '14-01-2012'])
+describe('_makeWithdrawalItem', () => {
+  it('returns the type, amount, date and current balance', () => {
+    expect(withdrawal._makeDebitItem()).toStrictEqual(['Debit', 20, '14-01-2012', 10])
   })
 })
