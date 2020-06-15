@@ -1,6 +1,10 @@
 import Withdrawal from './withdrawal'
 
-const withdrawal = new Withdrawal(20, '14-01-2012')
+let withdrawal
+
+beforeEach(() => {
+  withdrawal = new Withdrawal(20, '14-01-2012')
+})
 
 describe('withdrawal is initialised', () => {
   it('is defined', () => {

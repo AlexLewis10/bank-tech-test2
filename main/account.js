@@ -6,8 +6,9 @@ export default class Account {
     this.transactionHistory = []
   }
 
-  makeDeposit (date, amount) {
-    const deposit = new Deposit(date, amount)
+  makeDeposit (amount, date) {
+    this.balance += amount
+    const deposit = new Deposit(amount, date)
     this._updateTransactionHistory(deposit._makeDepositItem())
   }
 

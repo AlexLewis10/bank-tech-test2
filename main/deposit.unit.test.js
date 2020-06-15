@@ -1,6 +1,10 @@
 import Deposit from './deposit'
 
-const deposit = new Deposit(20, '10-01-2012')
+let deposit
+
+beforeEach(() => {
+  deposit = new Deposit(20, '10-01-2012')
+})
 
 describe('deposit is initialised', () => {
   it('is defined', () => {
