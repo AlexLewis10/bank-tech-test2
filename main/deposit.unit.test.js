@@ -6,7 +6,7 @@ beforeEach(() => {
   deposit = new Deposit(20, '10-01-2012', 20)
 })
 
-describe('deposit is initialised', () => {
+describe('Deposit is initialised', () => {
   it('is defined', () => {
     expect(deposit).toBeDefined()
   })
@@ -26,6 +26,6 @@ describe('deposit is initialised', () => {
 
 describe('_makeDepositItem returns an array', () => {
   it('returns the amount and the date of the deposit', () => {
-    expect(deposit._makeDepositItem()).toStrictEqual(['Credit', 20, '10-01-2012'])
+    expect(deposit._makeDepositItem()).toStrictEqual(['Credit', 20, '10-01-2012', 20])
   })
 })

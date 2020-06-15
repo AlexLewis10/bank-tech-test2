@@ -6,6 +6,6 @@ export default class Deposit {
   }
 
   _makeDepositItem () {
-    return ['Credit', this.amount, this.date]
+    return ['Credit', this.amount, this.date, this.currentBalance]
   }
 }
