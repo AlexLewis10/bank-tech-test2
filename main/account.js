@@ -19,4 +19,8 @@ export default class Account {
   _updateBalance (amount) {
     this.balance += amount
   }
+
+  makeWithdrawal (amount, date) {
+    this.balance -= amount
+  }
 }
