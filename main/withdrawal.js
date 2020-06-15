@@ -3,4 +3,8 @@ export default class Withdrawal {
     this.amount = amount
     this.date = date
   }
+
+  _makeDebitItem () {
+    return ['Debit', this.amount, this.date]
+  }
 }

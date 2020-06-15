@@ -15,3 +15,9 @@ describe('withdrawal is initialised', () => {
     expect(withdrawal.date).toBe('14-01-2012')
   })
 })
+
+describe('_makeWithdrawalItem returns an array', () => {
+  it('returns the amount and the date of the deposit', () => {
+    expect(withdrawal._makeDebitItem()).toStrictEqual(['Debit', 20, '14-01-2012'])
+  })
+})
