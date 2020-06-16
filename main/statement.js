@@ -1,13 +1,17 @@
 export default class Statement {
   constructor () {
-    this.headerString = 'date || credit || debit || balance'
+    this.transactionString = 'date || credit || debit || balance'
   }
 
   _printStatement (transactionHistory) {
-    const date = this._formatDate(transactionHistory[0][0])
-    const creditAmount = this._formatNumber(transactionHistory[0][2])
-    const balance = this._formatNumber(transactionHistory[0][3])
-    return `${this.headerString}\n ${date} || ${creditAmount} || || ${balance}`
+    for (let i = 0; i < transactionHistory.length; i++) {
+      const date = this._formatDate(transactionHistory[i][0])
+      const creditAmount = this._formatNumber(transactionHistory[i][2])
+      const balance = this._formatNumber(transactionHistory[i][3])
+      const debitString = `\n${date} || ${creditAmount} || || ${balance}`
+      this.transactionString = `${this.transactionString}${debitString}`
+    }
+    return this.transactionString
   }
 
   _formatDate (date) {

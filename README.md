@@ -1,6 +1,6 @@
 # Bank Tech Test - In Progress
 
-This challenge is set at part of the Individual Technical Challenge week at Makers in which you aim to achieve proffessional code quality standards.
+This challenge is set at part of the Individual Technical Challenge week at Makers in which you aim to achieve professional code quality standards.
 Following feedback from the first iteration I am now making improvements.
 
 ### Requirements
