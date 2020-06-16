@@ -1,6 +1,9 @@
 export default class Statement {
+  constructor () {
+    this.headerString = 'date || credit || debit || balance'
+  }
 
   _printStatement () {
-    return 'date || credit || debit || balance'
+    return this.headerString
   }
 }
