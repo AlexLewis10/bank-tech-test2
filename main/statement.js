@@ -4,12 +4,17 @@ export default class Statement {
   }
 
   _printStatement (transactionHistory) {
-    let date = transactionHistory[0][0]
-    date = date.replace(/-/g, '/')
-    let creditAmount = transactionHistory[0][2]
-    creditAmount = creditAmount.toFixed(2)
-    let balance = transactionHistory[0][3]
-    balance = balance.toFixed(2)
+    const date = this._formatDate(transactionHistory[0][0])
+    const creditAmount = this._formatNumber(transactionHistory[0][2])
+    const balance = this._formatNumber(transactionHistory[0][3])
     return `${this.headerString}\n ${date} || ${creditAmount} || || ${balance}`
+  }
+
+  _formatDate (date) {
+    return date.replace(/-/g, '/')
+  }
+
+  _formatNumber (number) {
+    return number.toFixed(2)
   }
 }
