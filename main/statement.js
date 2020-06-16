@@ -5,11 +5,20 @@ export default class Statement {
 
   _printStatement (transactionHistory) {
     for (let i = 0; i < transactionHistory.length; i++) {
-      const date = this._formatDate(transactionHistory[i][0])
-      const creditAmount = this._formatNumber(transactionHistory[i][2])
-      const balance = this._formatNumber(transactionHistory[i][3])
-      const debitString = `\n${date} || ${creditAmount} || || ${balance}`
-      this.transactionString = `${this.transactionString}${debitString}`
+      if (transactionHistory[i][1] === 'Credit') {
+        const date = this._formatDate(transactionHistory[i][0])
+        const creditAmount = this._formatNumber(transactionHistory[i][2])
+        const balance = this._formatNumber(transactionHistory[i][3])
+        const creditString = `\n${date} || ${creditAmount} || || ${balance}`
+        this.transactionString = `${this.transactionString}${creditString}`
+      }
+      if (transactionHistory[i][1] === 'Debit') {
+        const date = this._formatDate(transactionHistory[i][0])
+        const debitAmount = this._formatNumber(transactionHistory[i][2])
+        const balance = this._formatNumber(transactionHistory[i][3])
+        const debitString = `\n${date} || || ${debitAmount} || ${balance}`
+        this.transactionString = `${this.transactionString}${debitString}`
+      }
     }
     return this.transactionString
   }
