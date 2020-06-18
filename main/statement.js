@@ -1,7 +1,7 @@
 export default class Statement {
-  constructor () {
+  constructor (transactionHistory) {
     this.transactionString = 'date || credit || debit || balance'
-    this.transactionHistory = null
+    this.transactionHistory = transactionHistory
   }
 
   _printStatement () {

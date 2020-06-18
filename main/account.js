@@ -1,5 +1,6 @@
 import Deposit from './deposit.js'
 import Withdrawal from './withdrawal'
+import Statement from './statement.js'
 
 export default class Account {
   constructor () {
@@ -20,6 +21,12 @@ export default class Account {
     this._updateBalanceAfterDebit(amount)
     const withdrawal = new Withdrawal(amount, date, this.balance)
     this._updateTransactionHistory(withdrawal._makeDebitItem())
+  }
+
+  getStatement () {
+    let statement = new Statement(this.transactionHistory)
+    statement = statement._printStatement()
+    console.log(statement)
   }
 
   _updateTransactionHistory (transaction) {

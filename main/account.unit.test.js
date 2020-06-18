@@ -56,3 +56,16 @@ describe('Balance updates', () => {
     expect(account.balance).toStrictEqual(20)
   })
 })
+
+describe('Prints Bank Statement', () => {
+  it('user can make deposits and withdrawals and then print a bank statement', () => {
+    account.makeDeposit(1000, '10-01-2012')
+    account.makeDeposit(2000, '13-01-2012')
+    account.makeWithdrawal(500, '14-01-2012')
+
+    expect(account.getStatement()).toStrictEqual('date || credit || debit || balance' +
+    '\n14/01/2012 || || 500.00 || 2500.00' +
+    '\n13/01/2012 || 2000.00 || || 3000.00' +
+    '\n10/01/2012 || 1000.00 || || 1000.00')
+  })
+})
