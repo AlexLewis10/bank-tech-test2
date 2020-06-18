@@ -1,36 +1,33 @@
 export default class Statement {
   constructor () {
     this.transactionString = 'date || credit || debit || balance'
+    this.transactionHistory = null
   }
 
-  _printStatement (transactionHistory) {
-    for (let i = 0; i < transactionHistory.length; i++) {
-      if (transactionHistory[i][1] === 'Credit') {
-        this._addCreditTransaction(transactionHistory[i][0],
-          transactionHistory[i][2],
-          transactionHistory[i][3])
+  _printStatement () {
+    for (let i = 0; i < this.transactionHistory.length; i++) {
+      if (this.transactionHistory[i][1] === 'Credit') {
+        this._addCreditTransaction(this.transactionHistory[i])
       }
-      if (transactionHistory[i][1] === 'Debit') {
-        this._addDebitTransaction(transactionHistory[i][0],
-          transactionHistory[i][2],
-          transactionHistory[i][3])
+      if (this.transactionHistory[i][1] === 'Debit') {
+        this._addDebitTransaction(this.transactionHistory[i])
       }
     }
     return this.transactionString
   }
 
-  _addCreditTransaction (transactionDate, transactionAmount, transactionBalance) {
-    const date = this._formatDate(transactionDate)
-    const creditAmount = this._formatNumber(transactionAmount)
-    const balance = this._formatNumber(transactionBalance)
+  _addCreditTransaction (transaction) {
+    const date = this._formatDate(transaction[0])
+    const creditAmount = this._formatNumber(transaction[2])
+    const balance = this._formatNumber(transaction[3])
     const creditString = `\n${date} || ${creditAmount} || || ${balance}`
     this.transactionString = `${this.transactionString}${creditString}`
   }
 
-  _addDebitTransaction (transactionDate, transactionAmount, transactionBalance) {
-    const date = this._formatDate(transactionDate)
-    const debitAmount = this._formatNumber(transactionAmount)
-    const balance = this._formatNumber(transactionBalance)
+  _addDebitTransaction (transaction) {
+    const date = this._formatDate(transaction[0])
+    const debitAmount = this._formatNumber(transaction[2])
+    const balance = this._formatNumber(transaction[3])
     const debitString = `\n${date} || || ${debitAmount} || ${balance}`
     this.transactionString = `${this.transactionString}${debitString}`
   }
