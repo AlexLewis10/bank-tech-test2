@@ -27,7 +27,6 @@ date || credit || debit || balance
 
 
 To Do: 
-- Add spaces where appropriate in the tests
 - Add mocks to account tests.
 - Look at prettier.
 - Look at the nasty spaces in the statement unit test.

@@ -16,7 +16,7 @@ export default class Statement {
     return this.transactionString
   }
 
-  _addCreditTransaction (transaction) {
+  _addCreditTransaction(transaction) {
     const DATE = this._formatDate(transaction[0])
     const CREDIT_AMOUNT = this._formatNumber(transaction[2])
     const BALANCE = this._formatNumber(transaction[3])
