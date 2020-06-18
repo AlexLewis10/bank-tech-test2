@@ -29,6 +29,7 @@ describe('Can make a withdrawal', () => {
   it('transaction is added to transaction history in the correct order', () => {
     account.makeDeposit(20, '10-01-2012')
     account.makeWithdrawal(10, '11-10-2012')
+
     expect(account.transactionHistory).toStrictEqual([['11-10-2012', 'Debit', 10, 10], ['10-01-2012', 'Credit', 20, 20]])
   })
 })
@@ -36,23 +37,27 @@ describe('Can make a withdrawal', () => {
 describe('Balance updates', () => {
   it('when a deposit is made', () => {
     account.makeDeposit(20, '10-01-2012')
+
     expect(account.balance).toStrictEqual(20)
   })
 
   it('when a withdrawal is made', () => {
     account.makeDeposit(20, '10-01-2012')
     account.makeWithdrawal(10)
+
     expect(account.balance).toStrictEqual(10)
   })
 
   it('returns a message if there are insufficient funds', () => {
     account.makeDeposit(20, '10-01-2012')
+
     expect(account.makeWithdrawal(30)).toStrictEqual('Cannot withdraw money, insufficient funds')
   })
 
   it('does not update the balance if there are insufficient funds', () => {
     account.makeDeposit(20, '10-01-2012')
     account.makeWithdrawal(30)
+
     expect(account.balance).toStrictEqual(20)
   })
 })

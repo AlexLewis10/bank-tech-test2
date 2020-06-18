@@ -27,7 +27,6 @@ date || credit || debit || balance
 
 
 To Do: 
-- Put any consts into screaming snake
 - Add spaces where appropriate in the tests
 - Add mocks to account tests.
 - Look at prettier.
