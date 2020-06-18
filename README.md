@@ -26,7 +26,13 @@ date || credit || debit || balance
 ```
 
 
-| Input | Output |
-|-------|--------|
-| [[ 'Credit', 20, '10-01-2012', 20 ]] | d/c/d/b |
+To Do: 
+- Put any consts into screaming snake
+- Add spaces where appropriate in the tests
+- Add mocks to account tests.
+- Look at prettier.
+- Look at the nasty spaces in the statement unit test.
+- Organise tests in a nice order
+- Write test for console.log
+- Make Readme insightful and pretty
 

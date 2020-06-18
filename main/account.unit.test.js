@@ -57,7 +57,7 @@ describe('Balance updates', () => {
   })
 })
 
-describe('Prints Bank Statement', () => {
+describe('Prints bank statement', () => {
   it('user can make deposits and withdrawals and then print a bank statement', () => {
     account.makeDeposit(1000, '10-01-2012')
     account.makeDeposit(2000, '13-01-2012')

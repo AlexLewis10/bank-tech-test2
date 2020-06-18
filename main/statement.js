@@ -17,19 +17,19 @@ export default class Statement {
   }
 
   _addCreditTransaction (transaction) {
-    const date = this._formatDate(transaction[0])
-    const creditAmount = this._formatNumber(transaction[2])
-    const balance = this._formatNumber(transaction[3])
-    const creditString = `\n${date} || ${creditAmount} || || ${balance}`
-    this.transactionString = `${this.transactionString}${creditString}`
+    const DATE = this._formatDate(transaction[0])
+    const CREDIT_AMOUNT = this._formatNumber(transaction[2])
+    const BALANCE = this._formatNumber(transaction[3])
+    const CREDIT_STRING = `\n${DATE} || ${CREDIT_AMOUNT} || || ${BALANCE}`
+    this.transactionString = `${this.transactionString}${CREDIT_STRING}`
   }
 
   _addDebitTransaction (transaction) {
-    const date = this._formatDate(transaction[0])
-    const debitAmount = this._formatNumber(transaction[2])
-    const balance = this._formatNumber(transaction[3])
-    const debitString = `\n${date} || || ${debitAmount} || ${balance}`
-    this.transactionString = `${this.transactionString}${debitString}`
+    const DATE = this._formatDate(transaction[0])
+    const DEBIT_AMOUNT = this._formatNumber(transaction[2])
+    const BALANCE = this._formatNumber(transaction[3])
+    const DEBIT_STRING = `\n${DATE} || || ${DEBIT_AMOUNT} || ${BALANCE}`
+    this.transactionString = `${this.transactionString}${DEBIT_STRING}`
   }
 
   _formatDate (date) {
