@@ -26,7 +26,7 @@ export default class Account {
   getStatement () {
     let statement = new Statement(this.transactionHistory)
     statement = statement._printStatement()
-    console.log(statement)
+    return statement
   }
 
   _updateTransactionHistory (transaction) {
