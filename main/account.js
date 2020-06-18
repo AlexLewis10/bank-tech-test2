@@ -23,7 +23,7 @@ export default class Account {
   }
 
   _updateTransactionHistory (transaction) {
-    this.transactionHistory.push(transaction)
+    this.transactionHistory.unshift(transaction)
   }
 
   _updateBalanceAfterDeposit (amount) {

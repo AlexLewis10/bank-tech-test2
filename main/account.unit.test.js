@@ -26,10 +26,10 @@ describe('Can make a deposit', () => {
 })
 
 describe('Can make a withdrawal', () => {
-  it('transaction is added to transaction history', () => {
+  it('transaction is added to transaction history in the correct order', () => {
     account.makeDeposit(20, '10-01-2012')
     account.makeWithdrawal(10, '11-10-2012')
-    expect(account.transactionHistory).toStrictEqual([['10-01-2012', 'Credit', 20, 20], ['11-10-2012', 'Debit', 10, 10]])
+    expect(account.transactionHistory).toStrictEqual([['11-10-2012', 'Debit', 10, 10], ['10-01-2012', 'Credit', 20, 20]])
   })
 })
 
