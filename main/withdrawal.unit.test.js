@@ -22,6 +22,6 @@ describe('withdrawal is initialised', () => {
 
 describe('_makeWithdrawalItem', () => {
   it('returns the type, amount, date and current balance', () => {
-    expect(withdrawal._makeDebitItem()).toStrictEqual(['Debit', 20, '14-01-2012', 10])
+    expect(withdrawal._makeDebitItem()).toStrictEqual(['14-01-2012', 'Debit', 20, 10])
   })
 })

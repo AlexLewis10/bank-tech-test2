@@ -6,6 +6,6 @@ export default class Withdrawal {
   }
 
   _makeDebitItem () {
-    return ['Debit', this.amount, this.date, this.currentBalance]
+    return [this.date, 'Debit', this.amount, this.currentBalance]
   }
 }
