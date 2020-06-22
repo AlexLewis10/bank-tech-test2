@@ -1,6 +1,9 @@
 # Bank Tech Test - In Progress
 
+A simple bank account app in which the user can deposit or withdraw money and get a bank statement.
+
 This challenge is set at part of the Individual Technical Challenge week at Makers in which you aim to achieve professional code quality standards.
+
 Following feedback from the first iteration I am now making improvements.
 
 ### Requirements
@@ -23,6 +26,52 @@ date || credit || debit || balance
 14/01/2012 || || 500.00 || 2500.00
 13/01/2012 || 2000.00 || || 3000.00
 10/01/2012 || 1000.00 || || 1000.00
+```
+
+## Tech
+|   |Tech|
+|---|---|
+|Development | nodeJS |
+|Test | Jest |
+|Linting | ES lint |
+
+## User Stories
+
+I converted the requirements and acceptance criteria into user stories to break requirements down and to give myself an order to work through.
+
+```
+As a user,
+So that I can deposit money,
+I would like to be able to add money to my account
+
+As a user,
+So that I can withdraw money,
+I would like to be able to take money from my account
+
+As a user,
+So that I can review all of my transactions,
+I would like to be able view my transactions on a bank statement which includes the date, debit/credit and balance.
+
+As a user,
+So that I can understand my bank statement better,
+I would like my bank statement to list transactions in order, with the newest being first and oldest last.
+```
+
+I then sketched out a map to give myself a high level understanding of how the methods would fit together and what order the program would execute different functions in.
+
+## To run;
+```
+npm install
+```
+To run on a repl I used esm.
+To install;
+
+```
+npm install esm
+```
+Then;
+```
+node -r esm
 ```
 
 
