@@ -3,14 +3,17 @@ import Withdrawal from './withdrawal'
 import Statement from './statement.js'
 
 export default class Account {
-  constructor () {
+  constructor (
+    deposit = new Deposit()
+  ) {
     this.balance = 0
     this.transactionHistory = []
+    this.deposit = deposit
   }
 
   makeDeposit (amount, date) {
     this._updateBalanceAfterDeposit(amount)
-    const DEPOSIT = new Deposit(amount, date, this.balance)
+    const DEPOSIT = this.deposit._makeDepositItem(date, amount, this.balance)
     this._updateTransactionHistory(DEPOSIT._makeDepositItem())
   }
 
