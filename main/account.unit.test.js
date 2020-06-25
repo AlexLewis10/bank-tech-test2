@@ -74,3 +74,15 @@ describe('Prints bank statement', () => {
     '\n10/01/2012 || 1000.00 || || 1000.00')
   })
 })
+
+describe('Uses deposit class', () => {
+  it('make deposit calls Deposit._makeDepositItem', () => {
+    const depositInstance = account.deposit
+    const depositMock = jest.spyOn(depositInstance, '_makeDepositItem')
+    account.makeDeposit('10-10-11', 20)
+
+    expect(depositMock).toHaveBeenCalled()
+
+    depositMock.mockReset()
+  })
+})
