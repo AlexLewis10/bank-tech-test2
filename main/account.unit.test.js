@@ -26,7 +26,7 @@ describe('Can make a deposit', () => {
 })
 
 describe('Can make a withdrawal', () => {
-  xit('transaction is added to transaction history in the correct order', () => {
+  it('transaction is added to transaction history in the correct order', () => {
     account.makeDeposit(20, '10-01-2012')
     account.makeWithdrawal(10, '11-10-2012')
 
@@ -35,26 +35,26 @@ describe('Can make a withdrawal', () => {
 })
 
 describe('Balance updates', () => {
-  xit('when a deposit is made', () => {
+  it('when a deposit is made', () => {
     account.makeDeposit(20, '10-01-2012')
 
     expect(account.balance).toStrictEqual(20)
   })
 
-  xit('when a withdrawal is made', () => {
+  it('when a withdrawal is made', () => {
     account.makeDeposit(20, '10-01-2012')
     account.makeWithdrawal(10)
 
     expect(account.balance).toStrictEqual(10)
   })
 
-  xit('returns a message if there are insufficient funds', () => {
+  it('returns a message if there are insufficient funds', () => {
     account.makeDeposit(20, '10-01-2012')
 
     expect(account.makeWithdrawal(30)).toStrictEqual('Cannot withdraw money, insufficient funds')
   })
 
-  xit('does not update the balance if there are insufficient funds', () => {
+  it('does not update the balance if there are insufficient funds', () => {
     account.makeDeposit(20, '10-01-2012')
     account.makeWithdrawal(30)
 
@@ -63,7 +63,7 @@ describe('Balance updates', () => {
 })
 
 describe('Prints bank statement', () => {
-  xit('user can make deposits and withdrawals and then print a bank statement', () => {
+  it('user can make deposits and withdrawals and then print a bank statement', () => {
     account.makeDeposit(1000, '10-01-2012')
     account.makeDeposit(2000, '13-01-2012')
     account.makeWithdrawal(500, '14-01-2012')
