@@ -86,3 +86,15 @@ describe('Uses deposit class', () => {
     depositMock.mockReset()
   })
 })
+
+describe('Uses withdrawal class', () => {
+  it('makeWithdrawal calls Debit._makeDebitItem', () => {
+    const withdrawalInstance = account.withdrawal
+    const withdrawalMock = jest.spyOn(withdrawalInstance, '_makeDebitItem')
+    account.makeWithdrawal('10-10-11', 20)
+
+    expect(withdrawalMock).toHaveBeenCalled()
+
+    withdrawalMock.mockReset()
+  })
+})
