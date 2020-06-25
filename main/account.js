@@ -4,11 +4,13 @@ import Statement from './statement.js'
 
 export default class Account {
   constructor (
-    deposit = new Deposit()
+    deposit = new Deposit(),
+    withdrawal = new Withdrawal()
   ) {
     this.balance = 0
     this.transactionHistory = []
     this.deposit = deposit
+    this.withdrawal = withdrawal
   }
 
   makeDeposit (amount, date) {
@@ -22,8 +24,8 @@ export default class Account {
       return 'Cannot withdraw money, insufficient funds'
     }
     this._updateBalanceAfterDebit(amount)
-    const withdrawal = new Withdrawal(amount, date, this.balance)
-    this._updateTransactionHistory(withdrawal._makeDebitItem())
+    const DEBIT_ITEM = this.withdrawal._makeDebitItem(date, amount, this.balance)
+    this._updateTransactionHistory(DEBIT_ITEM)
   }
 
   getStatement () {
