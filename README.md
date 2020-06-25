@@ -28,8 +28,6 @@ date || credit || debit || balance
 
 To Do: 
 - Add mocks to account tests.
-- Look at prettier.
-- Look at the nasty spaces in the statement unit test.
 - Organise tests in a nice order
 - Write test for console.log
 - Make Readme insightful and pretty
