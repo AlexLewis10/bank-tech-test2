@@ -7,19 +7,19 @@ beforeEach(() => {
 })
 
 describe('Balance', () => {
-  xit('should equal zero', () => {
+  it('should equal zero', () => {
     expect(account.balance).toBe(0)
   })
 })
 
 describe('Transaction history', () => {
-  xit('should have a transaction history array', () => {
+  it('should have a transaction history array', () => {
     expect(account.transactionHistory).toStrictEqual([])
   })
 })
 
 describe('Can make a deposit', () => {
-  xit('transaction is added to transaction history', () => {
+  it('transaction is added to transaction history', () => {
     account.makeDeposit(20, '10-01-2012')
     expect(account.transactionHistory).toStrictEqual([['10-01-2012', 'Credit', 20, 20]])
   })

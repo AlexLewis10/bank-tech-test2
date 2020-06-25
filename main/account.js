@@ -13,8 +13,8 @@ export default class Account {
 
   makeDeposit (amount, date) {
     this._updateBalanceAfterDeposit(amount)
-    const DEPOSIT = this.deposit._makeDepositItem(date, amount, this.balance)
-    this._updateTransactionHistory(DEPOSIT._makeDepositItem())
+    const DEPOSIT_ITEM = this.deposit._makeDepositItem(date, amount, this.balance)
+    this._updateTransactionHistory(DEPOSIT_ITEM)
   }
 
   makeWithdrawal (amount, date) {
