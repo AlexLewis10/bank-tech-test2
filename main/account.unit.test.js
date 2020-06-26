@@ -97,4 +97,16 @@ describe('Uses withdrawal class', () => {
 
     withdrawalMock.mockReset()
   })
+
+  describe('Uses statement class', () => {
+    it('getStatement calls Statement._printStatement', () => {
+      const statementInstance = account.statement
+      const statementMock = jest.spyOn(statementInstance, '_printStatement')
+      account.getStatement([['14-01-2012', 'Debit', 500, 2500], ['13-01-2012', 'Credit', 2000, 3000], ['10-01-2012', 'Credit', 1000, 1000]])
+
+      expect(statementMock).toHaveBeenCalled()
+
+      statementMock.mockReset()
+    })
+  })
 })
