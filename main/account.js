@@ -2,13 +2,15 @@ import Deposit from './deposit.js'
 import Withdrawal from './withdrawal'
 import Statement from './statement.js'
 
+const INITIAL_BALANCE = 0
+
 export default class Account {
   constructor (
     deposit = new Deposit(),
     withdrawal = new Withdrawal(),
     statement = new Statement()
   ) {
-    this.balance = 0
+    this.balance = INITIAL_BALANCE
     this.transactionHistory = []
     this.deposit = deposit
     this.withdrawal = withdrawal
