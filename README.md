@@ -76,8 +76,8 @@ node -r esm
 
 
 To Do: 
-- Add mocks to account tests.
-- Organise tests in a nice order
+- Change print statement to a console.log rather than return to get the proper output.
+- Organise tests into unit & feature tests - put in good order
 - Write test for console.log
 - Make Readme insightful and pretty
 
