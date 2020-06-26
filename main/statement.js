@@ -1,16 +1,16 @@
 export default class Statement {
   constructor (transactionHistory) {
     this.transactionString = 'date || credit || debit || balance'
-    this.transactionHistory = transactionHistory
+    // this.transactionHistory = transactionHistory
   }
 
-  _printStatement () {
-    for (let i = 0; i < this.transactionHistory.length; i++) {
-      if (this.transactionHistory[i][1] === 'Credit') {
-        this._addCreditTransaction(this.transactionHistory[i])
+  _printStatement (transactionHistory) {
+    for (let i = 0; i < transactionHistory.length; i++) {
+      if (transactionHistory[i][1] === 'Credit') {
+        this._addCreditTransaction(transactionHistory[i])
       }
-      if (this.transactionHistory[i][1] === 'Debit') {
-        this._addDebitTransaction(this.transactionHistory[i])
+      if (transactionHistory[i][1] === 'Debit') {
+        this._addDebitTransaction(transactionHistory[i])
       }
     }
     return this.transactionString

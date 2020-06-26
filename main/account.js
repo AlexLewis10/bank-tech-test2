@@ -5,12 +5,14 @@ import Statement from './statement.js'
 export default class Account {
   constructor (
     deposit = new Deposit(),
-    withdrawal = new Withdrawal()
+    withdrawal = new Withdrawal(),
+    statement = new Statement()
   ) {
     this.balance = 0
     this.transactionHistory = []
     this.deposit = deposit
     this.withdrawal = withdrawal
+    this.statement = statement
   }
 
   makeDeposit (amount, date) {
@@ -29,9 +31,8 @@ export default class Account {
   }
 
   getStatement () {
-    let statement = new Statement(this.transactionHistory)
-    statement = statement._printStatement()
-    return statement
+    const STATEMENT = this.statement._printStatement(this.transactionHistory)
+    return STATEMENT
   }
 
   _updateTransactionHistory (transaction) {
