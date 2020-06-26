@@ -32,7 +32,7 @@ export default class Account {
 
   getStatement () {
     const STATEMENT = this.statement._printStatement(this.transactionHistory)
-    return STATEMENT
+    console.log(STATEMENT)
   }
 
   _updateTransactionHistory (transaction) {
