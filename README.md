@@ -60,6 +60,7 @@ I would like my bank statement to list transactions in order, with the newest be
 I then sketched out a map to give myself a high level understanding of how the methods would fit together and what order the program would execute different functions in.
 
 ## To run;
+Clone this repo and;
 ```
 npm install
 ```
@@ -73,6 +74,27 @@ Then;
 ```
 node -r esm
 ```
+
+When you're in the repl;
+
+```
+import account from './main/account.js'
+
+const myaccount = new Account()
+```
+To make deposits and withdrawals;
+```
+myaccount.makeDeposit(amount, date)
+myaccount.makeWithdrawal(amount, date)
+```
+To get a bank statement in the REPL
+```
+myaccount.getStatement()
+```
+## The end result
+
+
+
 
 
 To Do: 
