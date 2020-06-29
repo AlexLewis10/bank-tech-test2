@@ -1,5 +1,13 @@
 # Bank Tech Test - In Progress
 
+## Table of contents
+* [Requirements](#requirements)
+* [Acceptance Criteria](#acceptance-criteria)
+* [Tech](#tech)
+* [User Stories](#user-stories)
+* [Run the App](#run-the-app)
+* [The End Result](#the-end-result)
+
 A simple bank account app in which the user can deposit or withdraw money and get a bank statement.
 
 This challenge is set at part of the Individual Technical Challenge week at Makers in which you aim to achieve professional code quality standards.
@@ -13,7 +21,7 @@ Following feedback from the first iteration I am now making improvements.
 * Account statement (date, amount, balance) printing.
 * Data can be kept in memory (it doesn't need to be stored to a database or anything).
 
-### Acceptance criteria
+### Acceptance Criteria
 
 **Given** a client makes a deposit of 1000 on 10-01-2012  
 **And** a deposit of 2000 on 13-01-2012  
@@ -28,14 +36,14 @@ date || credit || debit || balance
 10/01/2012 || 1000.00 || || 1000.00
 ```
 
-## Tech
+### Tech
 |   |Tech|
 |---|---|
 |Development | nodeJS |
 |Test | Jest |
 |Linting | ES lint |
 
-## User Stories
+### User Stories
 
 I converted the requirements and acceptance criteria into user stories to break requirements down and to give myself an order to work through.
 
@@ -59,21 +67,14 @@ I would like my bank statement to list transactions in order, with the newest be
 
 I then sketched out a map to give myself a high level understanding of how the methods would fit together and what order the program would execute different functions in.
 
-## To run;
-Clone this repo and;
-```
-npm install
-```
-To run on a repl I used esm.
-To install;
+### Run the App
 
-```
-npm install esm
-```
-Then;
-```
-node -r esm
-```
+Clone this repo and `npm install`
+
+To run on a repl I used esm.
+To install:  `npm install esm`
+
+Then run the repl with`node -r esm`
 
 When you're in the repl;
 
@@ -87,17 +88,10 @@ To make deposits and withdrawals;
 myaccount.makeDeposit(amount, date)
 myaccount.makeWithdrawal(amount, date)
 ```
-To get a bank statement in the REPL
+To get a bank statement in the repl
 ```
 myaccount.getStatement()
 ```
-## The end result
+### The End Result
 
-
-
-
-
-To Do: 
-- Organise tests into unit & feature tests - put in good order
-- Make Readme insightful and pretty
-
+![alt text](https://github.com/AlexLewis10/bank-tech-test2/blob/master/image/account-screenshot.png)
