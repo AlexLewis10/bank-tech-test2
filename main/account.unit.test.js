@@ -43,20 +43,14 @@ describe('Balance updates', () => {
 
   it('when a withdrawal is made', () => {
     account.makeDeposit(20, '10-01-2012')
-    account.makeWithdrawal(10)
+    account.makeWithdrawal(10, '11-01-2012')
 
     expect(account.balance).toStrictEqual(10)
   })
 
-  it('returns a message if there are insufficient funds', () => {
-    account.makeDeposit(20, '10-01-2012')
-
-    expect(account.makeWithdrawal(30)).toStrictEqual('Cannot withdraw money, insufficient funds')
-  })
-
   it('does not update the balance if there are insufficient funds', () => {
     account.makeDeposit(20, '10-01-2012')
-    account.makeWithdrawal(30)
+    account.makeWithdrawal(30, '11-01-2012')
 
     expect(account.balance).toStrictEqual(20)
   })
