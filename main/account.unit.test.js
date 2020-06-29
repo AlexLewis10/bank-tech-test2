@@ -6,18 +6,6 @@ beforeEach(() => {
   account = new Account()
 })
 
-describe('Balance', () => {
-  it('should equal zero', () => {
-    expect(account.balance).toBe(0)
-  })
-})
-
-describe('Transaction history', () => {
-  it('should have a transaction history array', () => {
-    expect(account.transactionHistory).toStrictEqual([])
-  })
-})
-
 describe('Can make a deposit', () => {
   it('transaction is added to transaction history', () => {
     account.makeDeposit(20, '10-01-2012')
