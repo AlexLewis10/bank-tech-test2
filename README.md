@@ -1,12 +1,11 @@
 # Bank Tech Test - In Progress
 
-## Table of contents
-* [Requirements](#requirements)
-* [Acceptance Criteria](#acceptance-criteria)
-* [Tech](#tech)
-* [User Stories](#user-stories)
-* [Run the App](#run-the-app)
-* [The End Result](#the-end-result)
+[Requirements](#requirements)
+| [Acceptance Criteria](#acceptance-criteria)
+| [Tech](#tech)
+| [User Stories](#user-stories)
+| [Run the App](#run-the-app)
+| [The End Result](#the-end-result)
 
 A simple bank account app in which the user can deposit or withdraw money and get a bank statement.
 
@@ -65,7 +64,7 @@ So that I can understand my bank statement better,
 I would like my bank statement to list transactions in order, with the newest being first and oldest last.
 ```
 
-I then sketched out a map to give myself a high level understanding of how the methods would fit together and what order the program would execute different functions in.
+I sketched out a map to give myself a high level understanding of how the methods would fit together and what order the program would execute different functions in.
 
 ### Run the App
 
@@ -79,14 +78,14 @@ Then run the repl with`node -r esm`
 When you're in the repl;
 
 ```
-import account from './main/account.js'
+import Account from './main/account.js'
 
-const myaccount = new Account()
+let account = new Account()
 ```
 To make deposits and withdrawals;
 ```
-myaccount.makeDeposit(amount, date)
-myaccount.makeWithdrawal(amount, date)
+account.makeDeposit(amount, date)
+account.makeWithdrawal(amount, date)
 ```
 To get a bank statement in the repl
 ```
