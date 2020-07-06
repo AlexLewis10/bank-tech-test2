@@ -1,3 +1,7 @@
+const DATE = 0
+const AMOUNT = 2
+const BALANCE = 3
+
 export default class Statement {
   constructor () {
     this.statementInfo = 'date || credit || debit || balance'
@@ -16,17 +20,17 @@ export default class Statement {
   }
 
   _addCreditTransaction (transaction) {
-    const date = this._formatDate(transaction[0])
-    const creditAmount = this._formatNumber(transaction[2])
-    const balance = this._formatNumber(transaction[3])
+    const date = this._formatDate(transaction[DATE])
+    const creditAmount = this._formatNumber(transaction[AMOUNT])
+    const balance = this._formatNumber(transaction[BALANCE])
     const creditInfo = `\n${date} || ${creditAmount} || || ${balance}`
     this.statementInfo = `${this.statementInfo}${creditInfo}`
   }
 
   _addDebitTransaction (transaction) {
-    const date = this._formatDate(transaction[0])
-    const debitAmount = this._formatNumber(transaction[2])
-    const balance = this._formatNumber(transaction[3])
+    const date = this._formatDate(transaction[DATE])
+    const debitAmount = this._formatNumber(transaction[AMOUNT])
+    const balance = this._formatNumber(transaction[BALANCE])
     const debitInfo = `\n${date} || || ${debitAmount} || ${balance}`
     this.statementInfo = `${this.statementInfo}${debitInfo}`
   }
