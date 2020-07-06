@@ -60,7 +60,7 @@ describe('Uses deposit class', () => {
 describe('Uses withdrawal class', () => {
   it('makeWithdrawal calls Debit._makeDebitItem', () => {
     const withdrawalInstance = account.withdrawal
-    const withdrawalMock = jest.spyOn(withdrawalInstance, '_makeDebitItem')
+    const withdrawalMock = jest.spyOn(withdrawalInstance, '_makeWithdrawalItem')
     account.makeDeposit(30, '05-01-2012')
     account.makeWithdrawal(20, '10-01-2012')
 

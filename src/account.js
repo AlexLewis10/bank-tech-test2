@@ -28,7 +28,7 @@ export default class Account {
       return 'Cannot withdraw money, insufficient funds'
     }
     this._updateBalanceAfterDebit(amount)
-    const debitItem = this.withdrawal._makeDebitItem(date, amount, this.balance)
+    const debitItem = this.withdrawal._makeWithdrawalItem(date, amount, this.balance)
     this._updateTransactionHistory(debitItem)
   }
 
