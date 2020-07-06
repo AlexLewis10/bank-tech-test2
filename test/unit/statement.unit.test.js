@@ -1,4 +1,4 @@
-import Statement from './Statement.js'
+import Statement from '../../src/statement'
 
 let statement
 

@@ -1,4 +1,4 @@
-import Withdrawal from './withdrawal'
+import Withdrawal from '../../src/withdrawal'
 
 let withdrawal
 

@@ -1,4 +1,4 @@
-import Deposit from './deposit.js'
+import Deposit from '../../src/deposit.js'
 
 let deposit
 
