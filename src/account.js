@@ -27,9 +27,9 @@ export default class Account {
     if (amount > this.balance) {
       return 'Cannot withdraw money, insufficient funds'
     }
-    this._updateBalanceAfterDebit(amount)
-    const debitItem = this.withdrawal._makeWithdrawalItem(date, amount, this.balance)
-    this._updateTransactionHistory(debitItem)
+    this._updateBalanceAfterWithdrawal(amount)
+    const withdrawalItem = this.withdrawal._makeWithdrawalItem(date, amount, this.balance)
+    this._updateTransactionHistory(withdrawalItem)
   }
 
   getStatement () {
@@ -45,7 +45,7 @@ export default class Account {
     this.balance += amount
   }
 
-  _updateBalanceAfterDebit (amount) {
+  _updateBalanceAfterWithdrawal (amount) {
     this.balance -= amount
   }
 }
