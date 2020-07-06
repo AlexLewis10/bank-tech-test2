@@ -1,6 +1,6 @@
 export default class Statement {
   constructor () {
-    this.transactionString = 'date || credit || debit || balance'
+    this.statementInfo = 'date || credit || debit || balance'
   }
 
   _printStatement (transactionHistory) {
@@ -12,7 +12,7 @@ export default class Statement {
         this._addDebitTransaction(transactionHistory[i])
       }
     }
-    return this.transactionString
+    return this.statementInfo
   }
 
   _addCreditTransaction (transaction) {
@@ -20,7 +20,7 @@ export default class Statement {
     const creditAmount = this._formatNumber(transaction[2])
     const balance = this._formatNumber(transaction[3])
     const creditString = `\n${date} || ${creditAmount} || || ${balance}`
-    this.transactionString = `${this.transactionString}${creditString}`
+    this.statementInfo = `${this.statementInfo}${creditString}`
   }
 
   _addDebitTransaction (transaction) {
@@ -28,7 +28,7 @@ export default class Statement {
     const debitAmount = this._formatNumber(transaction[2])
     const balance = this._formatNumber(transaction[3])
     const debitString = `\n${date} || || ${debitAmount} || ${balance}`
-    this.transactionString = `${this.transactionString}${debitString}`
+    this.statementInfo = `${this.statementInfo}${debitString}`
   }
 
   _formatDate (date) {
