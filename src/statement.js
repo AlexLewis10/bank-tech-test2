@@ -19,8 +19,8 @@ export default class Statement {
     const date = this._formatDate(transaction[0])
     const creditAmount = this._formatNumber(transaction[2])
     const balance = this._formatNumber(transaction[3])
-    const creditString = `\n${date} || ${creditAmount} || || ${balance}`
-    this.statementInfo = `${this.statementInfo}${creditString}`
+    const creditInfo = `\n${date} || ${creditAmount} || || ${balance}`
+    this.statementInfo = `${this.statementInfo}${creditInfo}`
   }
 
   _addDebitTransaction (transaction) {
