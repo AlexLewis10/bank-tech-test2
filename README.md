@@ -80,7 +80,7 @@ When you're in the repl;
 ```
 import Account from './main/account.js'
 
-let account = new Account()
+const account = new Account()
 ```
 To make deposits and withdrawals;
 ```
@@ -89,7 +89,7 @@ account.makeWithdrawal(amount, date)
 ```
 To get a bank statement in the repl
 ```
-myaccount.getStatement()
+account.getStatement()
 ```
 ### The End Result
 
