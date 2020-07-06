@@ -1,5 +1,5 @@
 export default class Statement {
-  constructor (transactionHistory) {
+  constructor () {
     this.transactionString = 'date || credit || debit || balance'
   }
 
